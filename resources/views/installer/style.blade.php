@@ -21,7 +21,7 @@
     body { background: #f3f4f6; min-height: 100vh; }
     .installer-container { margin: 5vh auto 0 auto; width: 100% !important; }
     /* installer-container first div */
-    .installer-container div { max-width: 32rem; margin: 0 auto; }
+    .installer-container > div { max-width: 32rem; margin: 0 auto; }
     .bg-white { background: #fff; }
     .p-8 { padding: 2rem; }
     .rounded { border-radius: 0.25rem; }
@@ -97,5 +97,6 @@
     .space-x-2 { margin-left: 0.5rem; margin-right: 0.5rem; }
     .space-y-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
     .mt-2 { margin-top: 0.5rem; }
+    .mt-4 { margin-top: 1rem; }
     
 </style> 
