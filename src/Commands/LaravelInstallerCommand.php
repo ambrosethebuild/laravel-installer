@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace AmbroseTheBuild\LaravelInstaller\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelInstallerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-installer';
 
     public $description = 'My command';
 
