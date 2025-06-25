@@ -1,27 +1,54 @@
-# Laravel system install. Helps with checks before installing project on server
+![Laravel Installer Banner](https://banners.beyondco.de/Laravel-Installer.png?theme=light&packageManager=composer+require&packageName=ambrosethebuild%2Flaravel-installer&pattern=architect&style=style_1&description=Laravel+system+install.+Helps+with+checks+before+installing+project+on+server&md=1&showWatermark=1&fontSize=100px&images=badge-check)
+
+
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ambrosethebuild/laravel-installer.svg?style=flat-square)](https://packagist.org/packages/ambrosethebuild/laravel-installer)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ambrosethebuild/laravel-installer/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ambrosethebuild/laravel-installer/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ambrosethebuild/laravel-installer/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ambrosethebuild/laravel-installer/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ambrosethebuild/laravel-installer.svg?style=flat-square)](https://packagist.org/packages/ambrosethebuild/laravel-installer)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+# Laravel Installer
 
-## Support us
+A beautiful, step-by-step installer for Laravel projects. This package helps you verify your server environment, check required PHP extensions and folder permissions, edit your `.env` file, and run migrations—all before your app goes live.
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-installer.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-installer)
+**Features:**
+- System requirements and PHP extension checks
+- Folder permission checks
+- Easy .env editor
+- Database migration runner
+- Modern, responsive UI (no external CSS dependencies)
+- Progress is tracked and resumable
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Get your Laravel app production-ready with confidence and ease!
 
 ## Installation
 
-You can install the package via composer:
+If the package is not yet published on Packagist, you can install it directly from your Git repository using Composer's VCS repository feature:
 
-```bash
-composer require ambrosethebuild/laravel-installer
-```
+1. **Add the package as a VCS repository in your Laravel project's `composer.json`:**
+
+    ```json
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ambrosethebuild/laravel-installer.git"
+        }
+    ]
+    ```
+
+2. **Require the package in your Laravel project:**
+
+    ```sh
+    composer require ambrosethebuild/laravel-installer:dev-main
+    ```
+
+3. **Publish the config (optional):**
+
+    ```sh
+    php artisan vendor:publish --provider="AmbroseTheBuild\LaravelInstaller\LaravelInstallerServiceProvider"
+    ```
+
+4. **Visit `/installer` in your browser to start the installation wizard.**
 
 You can publish and run the migrations with:
 
@@ -47,13 +74,6 @@ Optionally, you can publish the views using
 
 ```bash
 php artisan vendor:publish --tag="laravel-installer-views"
-```
-
-## Usage
-
-```php
-$laravelInstaller = new AmbroseTheBuild\LaravelInstaller();
-echo $laravelInstaller->echoPhrase('Hello, AmbroseTheBuild!');
 ```
 
 ## Testing
