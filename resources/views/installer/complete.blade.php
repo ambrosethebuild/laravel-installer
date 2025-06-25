@@ -20,6 +20,11 @@
             @include('installer::installer.divider')
             <pre>{{ $output ?? '' }}</pre>
         @endif
+        <div class="actions">
+            <a href="/" style="text-decoration: none;">
+                @include('installer::installer.button', ['title' => 'Go to App'])
+            </a>
+        </div>
     </div>
     @include('installer::installer.footer')
 </body>
