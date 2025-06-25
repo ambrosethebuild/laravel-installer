@@ -76,29 +76,16 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="laravel-installer-views"
 ```
 
+## Publish Fonts
+
+After installation, publish the Poppins font files to your public directory:
+
+```sh
+php artisan vendor:publish --tag=installer-fonts
+```
+
 ## Testing
 
 ```bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Ambrose Bako](https://github.com/ambrosethebuild)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
