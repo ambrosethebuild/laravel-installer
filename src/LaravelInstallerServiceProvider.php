@@ -22,4 +22,20 @@ class LaravelInstallerServiceProvider extends PackageServiceProvider
             ->hasMigration('create_laravel_installer_table')
             ->hasCommand(LaravelInstallerCommand::class);
     }
+
+    public function boot()
+    {
+        $this->loadRoutesFrom(__DIR__.'/../routes/installer.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'installer');
+        $this->publishes([
+            __DIR__.'/../config/installer.php' => config_path('installer.php'),
+        ], 'installer-config');
+    }
+
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/installer.php', 'installer'
+        );
+    }
 }
