@@ -67,6 +67,14 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'required_extensions' => [
+        'openssl', 'pdo', 'mbstring', 'tokenizer', 'xml', 'ctype', 'json', 'bcmath',
+    ],
+    'folders' => [
+        'storage/logs',
+        'bootstrap/cache',
+        'storage/framework',
+    ],
 ];
 ```
 
