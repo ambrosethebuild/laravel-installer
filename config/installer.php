@@ -10,4 +10,6 @@ return [
         'bootstrap/cache',
         'storage/framework',
     ],
+
+    'show_creator_section' => true, // set to false to hide the creator section
 ];

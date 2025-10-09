@@ -29,10 +29,10 @@ class LaravelInstallerServiceProvider extends PackageServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'installer');
         $this->publishes([
             __DIR__.'/../config/installer.php' => config_path('installer.php'),
-        ], 'installer-config');
+        ], 'laravel-installer-config');
         $this->publishes([
             __DIR__.'/../resources/fonts' => public_path('fonts'),
-        ], 'installer-fonts');
+        ], 'laravel-installer-fonts');
     }
 
     public function register()
