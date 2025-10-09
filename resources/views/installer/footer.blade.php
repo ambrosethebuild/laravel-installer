@@ -1,5 +1,5 @@
 <div>
-    @if(config('installer.show_creator_section'))
+    @if(config('laravel_installer.show_creator_section'))
         <footer class="installer-footer">
             <span>Built with ❤️ from Ghana. &mdash; </span>
             <a href="https://github.com/ambrosethebuild" target="_blank" rel="noopener"

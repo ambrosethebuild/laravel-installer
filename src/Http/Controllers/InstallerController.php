@@ -74,7 +74,7 @@ class InstallerController extends Controller
     {
         if ($this->isInstalled()) return redirect()->route('installer.complete');
         if ($redirect = $this->ensureStep('requirements')) return $redirect;
-        $required = config('installer.required_extensions', []);
+        $required = config('laravel_installer.required_extensions', []);
         $requirements = [];
         $allOk = true;
         foreach ($required as $ext) {
@@ -87,7 +87,7 @@ class InstallerController extends Controller
     public function requirementsContinue(Request $request)
     {
         if ($this->isInstalled()) return redirect()->route('installer.complete');
-        $required = config('installer.required_extensions', []);
+        $required = config('laravel_installer.required_extensions', []);
         $requirements = [];
         $allOk = true;
         $missing = [];
@@ -112,7 +112,7 @@ class InstallerController extends Controller
     {
         if ($this->isInstalled()) return redirect()->route('installer.complete');
         if ($redirect = $this->ensureStep('permissions')) return $redirect;
-        $foldersList = config('installer.folders', []);
+        $foldersList = config('laravel_installer.folders', []);
         $folders = [];
         $allOk = true;
         foreach ($foldersList as $folder) {
@@ -126,7 +126,7 @@ class InstallerController extends Controller
     public function permissionsContinue(Request $request)
     {
         if ($this->isInstalled()) return redirect()->route('installer.complete');
-        $foldersList = config('installer.folders', []);
+        $foldersList = config('laravel_installer.folders', []);
         $folders = [];
         $allOk = true;
         $missing = [];

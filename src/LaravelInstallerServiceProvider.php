@@ -25,20 +25,21 @@ class LaravelInstallerServiceProvider extends PackageServiceProvider
 
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/installer.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'installer');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/installer.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'installer');
         $this->publishes([
-            __DIR__.'/../config/installer.php' => config_path('installer.php'),
+            __DIR__ . '/../config/laravel_installer.php' => config_path('laravel_installer.php'),
         ], 'laravel-installer-config');
         $this->publishes([
-            __DIR__.'/../resources/fonts' => public_path('fonts'),
+            __DIR__ . '/../resources/fonts' => public_path('fonts'),
         ], 'laravel-installer-fonts');
     }
 
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/installer.php', 'installer'
+            __DIR__ . '/../config/laravel_installer.php',
+            'laravel_installer'
         );
     }
 }
