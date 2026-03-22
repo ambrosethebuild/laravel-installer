@@ -19,7 +19,6 @@ class LaravelInstallerServiceProvider extends PackageServiceProvider
             ->name('laravel-installer')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel_installer_table')
             ->hasCommand(LaravelInstallerCommand::class);
     }
 
