@@ -69,6 +69,22 @@ public function boot(): void
 This will ensure that all web requests are sent to the installer wizard until the installation is finished. Once completed, a flag file is created in your storage directory, and this redirect will no longer trigger.
 
 
+## Tailwind CSS Configuration (Important)
+
+If your Laravel project uses Tailwind CSS and you are running `npm run build` or `npm run prod`, you must add the package's views to your `tailwind.config.js` file. This prevents the styles used in the installer from being purged during the production build:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        // ... your other content paths
+        './vendor/ambrosethebuild/laravel-installer/resources/views/**/*.blade.php',
+    ],
+    // ...
+}
+```
+
+
 ## Publish Fonts
 
 After installation, publish the Poppins font files to your public directory:
