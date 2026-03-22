@@ -50,6 +50,25 @@ return [
 ];
 ```
 
+## Usage
+
+To automatically redirect users to the installer until it is completed, you can add the following check in the `boot` method of your `App\Providers\AppServiceProvider.php`:
+
+```php
+use AmbroseTheBuild\LaravelInstaller\LaravelInstaller;
+
+public function boot(): void
+{
+    if (!app()->runningInConsole() && !LaravelInstaller::isInstalled() && !request()->is('installer*')) {
+        header('Location: /installer');
+        exit;
+    }
+}
+```
+
+This will ensure that all web requests are sent to the installer wizard until the installation is finished. Once completed, a flag file is created in your storage directory, and this redirect will no longer trigger.
+
+
 ## Publish Fonts
 
 After installation, publish the Poppins font files to your public directory:
