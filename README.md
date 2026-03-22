@@ -23,38 +23,10 @@ Get your Laravel app production-ready with confidence and ease!
 
 ## Installation
 
-If the package is not yet published on Packagist, you can install it directly from your Git repository using Composer's VCS repository feature:
-
-1. **Add the package as a VCS repository in your Laravel project's `composer.json`:**
-
-    ```json
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ambrosethebuild/laravel-installer.git"
-        }
-    ]
-    ```
-
-2. **Require the package in your Laravel project:**
-
-    ```sh
-    composer require ambrosethebuild/laravel-installer:dev-main
-    ```
-
-3. **Publish the config (optional):**
-
-    ```sh
-    php artisan vendor:publish --provider="AmbroseTheBuild\LaravelInstaller\LaravelInstallerServiceProvider"
-    ```
-
-4. **Visit `/installer` in your browser to start the installation wizard.**
-
-You can publish and run the migrations with:
+You can install the package via composer:
 
 ```bash
-php artisan vendor:publish --tag="laravel-installer-migrations"
-php artisan migrate
+composer require ambrosethebuild/laravel-installer
 ```
 
 You can publish the config file with:
@@ -77,12 +49,6 @@ return [
     ],
 ];
 ```
-
-<!-- Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-installer-views"
-``` -->
 
 ## Publish Fonts
 
