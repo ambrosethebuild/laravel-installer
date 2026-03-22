@@ -186,6 +186,14 @@ class InstallerController extends Controller
     public function migrateContinue(Request $request)
     {
         if ($this->isInstalled()) return redirect()->route('installer.complete');
+
+        if ($request->input('skip')) {
+            $flagFile = storage_path('installer_completed');
+            file_put_contents($flagFile, 'skipped migrations: ' . now());
+            $this->setStepDone('migrate');
+            return redirect()->route('installer.complete');
+        }
+
         $success = null;
         $output = '';
         try {

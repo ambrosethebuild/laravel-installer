@@ -42,6 +42,13 @@
                         <input type="hidden" name="seed" value="1">
                         @include('installer::installer.button', ['title' => 'Run Migrations & Seed'])
                     </form>
+                    <form method="post" action="{{ route('installer.migrate-continue') }}" class="mt-4 border-t pt-4 text-center">
+                        @csrf
+                        <input type="hidden" name="skip" value="1">
+                        <button type="submit" class="text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors duration-200">
+                            Skip Migrations & Finish Setup
+                        </button>
+                    </form>
                 </div>
             @endif
         </div>
