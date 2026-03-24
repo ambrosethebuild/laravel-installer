@@ -60,8 +60,7 @@ use AmbroseTheBuild\LaravelInstaller\LaravelInstaller;
 public function boot(): void
 {
     if (!app()->runningInConsole() && !LaravelInstaller::isInstalled() && !request()->is('installer*')) {
-        header('Location: /installer');
-        exit;
+        redirect('/installer/welcome')->send();
     }
 }
 ```
